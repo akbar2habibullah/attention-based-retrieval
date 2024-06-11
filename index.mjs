@@ -8,7 +8,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY)
 const embeddingModel = genAI.getGenerativeModel({ model: "text-embedding-004" })
 
 
-// Function to generate response from OpenRouter
+// Function to generate response from Groq (can be from anywhere, e.g, OpenAI, OpenRouter, Gemini, Claude, Mistral, etc)
 export async function generateResponse(prompt, model = 'llama3-8b-8192') {
   const chatCompletion = await groq.chat.completions.create({
     messages: [
